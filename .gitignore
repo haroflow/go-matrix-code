@@ -1,2 +1,3 @@
-.vscode/launch.json
+.vscode
 tmp/main.exe
+go-matrix-code.exe

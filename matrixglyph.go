@@ -1,15 +1,10 @@
 package main
 
 import (
-	"math/rand"
-
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-var (
-	HEADGLYPHCOLOR = rl.Color{R: 155, G: 255, B: 155, A: 255}
-)
-
+// MatrixGlyph represents a Matrix code character
 type MatrixGlyph struct {
 	Char   string
 	X      float32
@@ -18,28 +13,39 @@ type MatrixGlyph struct {
 	Health float32
 }
 
+// Draw the glyph
 func (g *MatrixGlyph) Draw() {
-	dx := rand.Float32() * 3
-	dy := rand.Float32() * 3
+	if !g.IsHead && g.Health <= 0 {
+		// The glyph is dead
+		return
+	}
 
-	color := HEADGLYPHCOLOR
+	// Bright glyph if Head
+	color := HeadGlyphColor
+
 	if !g.IsHead {
-		f := uint8(60.0 / 100.0 * g.Health)
+		// Calculate glyph color if tail, based on the glyph's health
+		f := 60.0 / 100.0 * g.Health
 		if f > 255 {
 			f = 255
+		} else if f < 0 {
+			f = 0
 		}
 
-		h := uint8(255.0 / 100.0 * g.Health)
+		h := 255.0 / 100.0 * g.Health
 		if h > 255 {
 			h = 255
+		} else if h < 0 {
+			h = 0
 		}
 
-		color = rl.Color{R: f, G: h, B: f, A: 255}
-		// text.setFillColor(sf::Color(f, h, f, 255));
+		color = rl.Color{R: uint8(f), G: uint8(h), B: uint8(f), A: 255}
 	}
-	rl.DrawTextEx(FONT, g.Char, rl.Vector2{X: g.X + dx, Y: g.Y + dy}, float32(20), float32(0), color)
 
-	if g.Health > 0 {
-		g.Health--
-	}
+	rl.DrawTextEx(MatrixFont,
+		g.Char,
+		rl.Vector2{X: g.X, Y: g.Y},
+		float32(GlyphSize),
+		float32(0),
+		color)
 }
