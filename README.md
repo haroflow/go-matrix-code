@@ -5,6 +5,7 @@ Recreation of the Matrix Digital Rain in Golang + [raylib](https://github.com/ge
 
 ## Requirements
 - Go version 1.16
+- raylib dependencies, check [raylib's docs](https://github.com/gen2brain/raylib-go)
 
 ## Build
 Tested on Windows 10. Should work on other systems as well.
