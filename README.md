@@ -3,6 +3,8 @@ Recreation of the Matrix Digital Rain in Golang + [raylib](https://github.com/ge
 
 ![Preview](matrix-code-preview.gif)
 
+Font by [NORFOK™](https://www.norfok.com/)
+
 ## Requirements
 - Go version 1.16
 - raylib dependencies, check [raylib's docs](https://github.com/gen2brain/raylib-go)
