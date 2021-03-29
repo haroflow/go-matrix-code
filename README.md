@@ -3,7 +3,7 @@ Recreation of the Matrix Digital Rain in Golang + [raylib](https://github.com/ge
 
 ![Preview](matrix-code-preview.gif)
 
-Font by [NORFOK™](https://www.norfok.com/)
+Font by [NORFOK™](https://www.norfok.com/). License at the [font's site](https://www.norfok.com/portfolio-freeware_matrixcode.html)
 
 ## Requirements
 - Go version 1.16
