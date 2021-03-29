@@ -1,5 +1,5 @@
 # go-matrix-code
-Recreation of the Matrix Digital Rain in Golang + raylib.
+Recreation of the Matrix Digital Rain in Golang + [raylib](https://github.com/gen2brain/raylib-go).
 
 ![Preview](matrix-code-preview.gif)
 
