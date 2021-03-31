@@ -44,13 +44,13 @@ func (s *MatrixStream) Draw() {
 			g.Health = 0
 		}
 
-		if rand.Intn(10) == 0 {
+		if rand.Intn(15) == 0 {
 			// Looking at the movie reference, the glyphs left behing change characters over time
 			g.Char = randomChar()
 		}
 	}
 
-	if rand.Intn(5) > 2 {
+	if rand.Intn(5) > 3 {
 		// The Head leaves a copy of the character behind
 		newTail := &MatrixGlyph{
 			Char:   s.Head.Char,
