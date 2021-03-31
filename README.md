@@ -31,3 +31,5 @@ go-matrix-code.exe
 # Fullscreen
 go-matrix-code.exe -fullscreen
 ```
+
+Press F1 while running to see adjustable parameters.
